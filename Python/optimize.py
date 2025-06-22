@@ -38,7 +38,8 @@ class Section:
     def apply_constant_propagation(self):
         candidates = []
         store_candidates = []
-
+        count = 0
+        
         # Check for constant propagation candidates
         for i, insn in enumerate(self.data):
             opcode = int(insn[:2], 16)
@@ -72,6 +73,7 @@ class Section:
     # Code compaction implementation
     def apply_compaction(self):
         candidates = []
+        count = 0
 
         # Find candidates for compaction
         for i, insn in enumerate(self.data):
